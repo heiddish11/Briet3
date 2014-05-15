@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Briet3.Models.Title>
+
+    @{
+    ViewBag.Title = "Home Page";
+
+    }
+
+    <div class="jumbotron">
+        <h1>Bríet</h1>
+        <p class="lead"></p>
+    </div>
+
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>Name</td>
+            <td>Status</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td></td>
+                <td><a href="/Home/EditTitle/@item.ID">@item.Name</a></td>
+                <td><a href="/Home/EditTitle/@item.ID">
+                    @if (item.Active == true)
+                    {
+                        <span>foo</span>
+                    }
+                    else
+                    {
+                        <span>bar</span>
+                    }
+                </a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
