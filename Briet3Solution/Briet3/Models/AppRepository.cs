@@ -57,5 +57,19 @@ namespace Briet3.Models
         {
             throw new NotImplementedException();
         }
+
+
+        public FileSRT GetFile(int id)
+        {
+            return m_db.Files.Where(file => file.FileSRTID == id).FirstOrDefault();
+        }
+
+
+        public void SaveFile(FileSRT model)
+        {
+            FileSRT current = GetFile(model.FileSRTID.Value);
+            m_db.Entry(current).CurrentValues.SetValues(model);
+            m_db.SaveChanges();
+        }
     }
 }

@@ -23,5 +23,9 @@ namespace Briet3.Models
         //void Save();
 
         void ChangedFile(int? toChange);
+
+        FileSRT GetFile(int id);
+
+        void SaveFile(FileSRT model);
     }
 }
