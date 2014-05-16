@@ -5,56 +5,60 @@
 
     }
 
-<!--LOGO-->
-<div>
-    
+<div class="container">
+    <!--LOGO-->
+    <div>
+
         <div class="row well well-lg">
             <div class="col-md-6 col-md-offset-3 text-center">
                 <img src="~/Photos/AdaGreen.png" alt="BrietLogo" class="img-responsive text-center" />
             </div>
         </div>
-   
-</div>
 
-<!--BUTTONS-->
+    </div>
 
-<div class="text-center">
-    <input type="image" src="~/Photos/movies-64.png" />
-    <input type="image" src="~/Photos/tv-64.png" />
-    <input type="image" src="~/Photos/school-64.png" />
-    <input type="image" src="~/Photos/mickey-mouse-23-64.png" />
-</div>
+    <!--BUTTONS-->
 
-<!--TABLE-->
+    <div class="text-center">
+        <input type="image" src="~/Photos/movies-64.png" />
+        <input type="image" src="~/Photos/tv-64.png" />
+        <input type="image" src="~/Photos/school-64.png" />
+        <input type="image" src="~/Photos/mickey-mouse-23-64.png" />
+    </div>
 
-<table class="table table-condensed table-hover">
-    <thead>
-        <tr>
-            <td>#</td>
-            <td>Name</td>
-            <td>Status</td>
-            <td>Download</td>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+    <!--TABLE-->
+
+    <table class="table table-condensed table-hover">
+        <thead>
             <tr>
-                <td>@item.ID</td>
-                <td><a href="/Home/EditTitle/@item.ID">@item.Name</a></td>
-                <td><a href="/Home/EditTitle/@item.ID">
-                    @if (item.Active == true)
-                    {
-                        <span>Subtitle Ready!</span>
-                    }
-                    else
-                    {
-                        <span>Help Translate Subtitles</span>
-                    }
-                </a></td>
-                <td></td>
+                <td>#</td>
+                <td>Name</td>
+                <td>Status</td>
+                <td>Download</td>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ID</td>
+                    <td><a href="/Home/EditTitle/@item.ID">@item.Name</a></td>
+                    <td>
+                        <a href="/Home/EditTitle/@item.ID">
+                            @if (item.Active == true)
+                            {
+                                <span>Subtitle Ready!</span>
+                            }
+                            else
+                            {
+                                <span>Help Translate Subtitles</span>
+                            }
+                        </a>
+                    </td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
+</div>
