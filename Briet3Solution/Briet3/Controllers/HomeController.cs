@@ -17,12 +17,13 @@ namespace Briet3.Controllers
         }
         /*   public HomeController(IAppRepository rep)
             {
-                 //Smidur fyrir einingaprofanir/mock repository
+                 //Constructor for unit testingr/mock repository
                  m_repository = rep;
             }
         */
         public ActionResult Index()
         {
+            // Getting a list of titles from the database
             IEnumerable<Title> titles = m_repository.GetTitles;
             return View(titles);
         }
@@ -43,6 +44,7 @@ namespace Briet3.Controllers
         [HttpGet]
         public ActionResult CreateTitle()
         {
+            //Creating a new instance of the class Title
             Title a = new Title();
             
             return View(a);
@@ -96,45 +98,43 @@ namespace Briet3.Controllers
         [HttpGet]
         public ActionResult EditTitle(int? id)
         {
-
+            // Get title by id to enable editing
             if (id.HasValue)
             {
                 int nid = Convert.ToInt32(id);
 
-                var model = (from Files in m_repository.GetFiles
-                            where Files.FileSRTID == nid
-                            select Files).SingleOrDefault();
+                FileSRT model = (from Files in m_repository.GetFiles
+                                 where Files.TitleID == nid
+                                 select Files).FirstOrDefault();
+
                 return View(model);     
             }
 
-            return View("Not found");
+            return View("Error");
            
         }
 
         [HttpPost]
         public ActionResult EditTitle(FileSRT model)
         {
+            // Enable user to edit a file 
+            // by calling the Savefile function
             if(ModelState.IsValid)
             {
+                m_repository.SaveFile(model);
             }
-            /*var toChange = (from x in m_repository.GetFiles
-                            where x.TitleID == id
-                            select x.FileSRTID).SingleOrDefault();
 
-            m_repository.ChangedFile(toChange);
-             */
-            return View();
+            return View("Success");
         }
 
-       /* public ActionResult Translate()
+        [HttpGet]
+        public FileContentResult GetFile(int id)
         {
-
-            var ActiveTitles = from titles in m_repository.GetTitles()
-                               where titles.Active == true
-                               select titles;
-            return View(ActiveTitles);
+            // Enable user to download file from database
+            FileSRT file = m_repository.GetFile(id);
+            byte[] data = System.Text.Encoding.Default.GetBytes(file.Data);
+            return File(data, "text/plain", file.FileSRTName);
         }
-        */ 
 
     }
 }

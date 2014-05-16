@@ -35,6 +35,20 @@
                 <td>Name</td>
                 <td>Status</td>
                 <td>Download</td>
+
+                <td>@item.ID</td>
+                <td><a href="/Home/EditTitle/@item.ID">@item.Name</a></td>
+                <td><a href="/Home/EditTitle/@item.ID">
+                    @if (item.Active == true)
+                    {
+                        <span>Subtitle Ready!</span>
+                    }
+                    else
+                    {
+                        <span>Help Translate Subtitles</span>
+                    }
+                </a></td>
+                <td><a href="/Home/GetFile/@item.ID">Download</a></td>
             </tr>
         </thead>
         <tbody>

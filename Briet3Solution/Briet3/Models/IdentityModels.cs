@@ -14,7 +14,7 @@ namespace Briet3.Models
             : base("AppDataContext")
         {
         }
-        //Setting every modelclass into the Database, to create a list in the database.
+        //Setting every modelclass into the Database, to create a database table.
         public DbSet<Title> Titles { get; set; }
         public DbSet<FileSRT> Files { get; set; }
         public DbSet<Category> Categories { get; set; }
