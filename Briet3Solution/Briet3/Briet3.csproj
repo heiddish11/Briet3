@@ -188,6 +188,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Photos\DisTeam.jpg" />
     <Content Include="Photos\AdaGreen.png" />
     <Content Include="Photos\downloading-updates-64.png" />
     <Content Include="Photos\mickey-mouse-23-64.png" />

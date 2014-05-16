@@ -40,3 +40,24 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+a:visited, a:hover {
+    color: #e93e18;
+}
+
+a:link{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+thead {
+    font-size: 15px;
+}
+
+table {
+  background-color: #ddd;
+}
+
+thead {
+    font-size: 15px;
+    border-color: #ffffff;
+    border: thin;
+}
