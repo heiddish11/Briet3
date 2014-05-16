@@ -9,18 +9,17 @@ namespace Briet3.Models
     {
         private AppDataContext m_db = new AppDataContext();
 
-        public void AddfileSRT (FileSRT fileSRT)
+        /*FileSRT IAppRepository.ChangedData
         {
-            m_db.Files.Add(fileSRT);
-            m_db.SaveChanges();
+            get
+            {
+                return m_db;
+            }
+            set
+            {
+            }
         }
-        public void AddTitle(Title title)
-        {
-            m_db.Titles.Add(title);
-            m_db.SaveChanges();
-        }
-
-
+         */
         IEnumerable<Title> IAppRepository.GetTitles
         {
             get
@@ -41,6 +40,22 @@ namespace Briet3.Models
             set
             {
             }
+        }
+
+        public void AddfileSRT (FileSRT fileSRT)
+        {
+            m_db.Files.Add(fileSRT);
+            m_db.SaveChanges();
+        }
+        public void AddTitle(Title title)
+        {
+            m_db.Titles.Add(title);
+            m_db.SaveChanges();
+        }
+
+        public void ChangedFile(int? toChange)
+        {
+            throw new NotImplementedException();
         }
     }
 }

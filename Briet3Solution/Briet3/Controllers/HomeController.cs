@@ -112,8 +112,17 @@ namespace Briet3.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditTitle(int id, FormCollection collection)
+        public ActionResult EditTitle(FileSRT model)
         {
+            if(ModelState.IsValid)
+            {
+            }
+            /*var toChange = (from x in m_repository.GetFiles
+                            where x.TitleID == id
+                            select x.FileSRTID).SingleOrDefault();
+
+            m_repository.ChangedFile(toChange);
+             */
             return View();
         }
 

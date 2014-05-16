@@ -13,11 +13,15 @@ namespace Briet3.Models
         IEnumerable<Title> GetTitles { get; set; }
         IEnumerable<FileSRT> GetFiles { get; set; }
 
+        //FileSRT ChangedData { get; set; }
+
         //Foll sem leyfa okkur ad setja inn breytur
         //void AddTitle(Title t);
 
 
         //Fall sem leyfir okkur ad vista
         //void Save();
+
+        void ChangedFile(int? toChange);
     }
 }

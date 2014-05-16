@@ -22,16 +22,16 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td></td>
+                <td>@item.ID</td>
                 <td><a href="/Home/EditTitle/@item.ID">@item.Name</a></td>
                 <td><a href="/Home/EditTitle/@item.ID">
                     @if (item.Active == true)
                     {
-                        <span>foo</span>
+                        <span>Subtitle Ready!</span>
                     }
                     else
                     {
-                        <span>bar</span>
+                        <span>Help Translate Subtitles</span>
                     }
                 </a></td>
             </tr>
