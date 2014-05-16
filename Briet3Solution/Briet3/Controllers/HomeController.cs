@@ -41,6 +41,7 @@ namespace Briet3.Controllers
             return View();
         }
 
+        [Authorize]
         [HttpGet]
         public ActionResult CreateTitle()
         {
@@ -94,7 +95,8 @@ namespace Briet3.Controllers
                  return View("Error");
              }
         }
-
+        
+        [Authorize]
         [HttpGet]
         public ActionResult EditTitle(int? id)
         {
