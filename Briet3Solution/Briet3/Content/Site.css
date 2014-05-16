@@ -61,3 +61,7 @@ thead {
     border-color: #ffffff;
     border: thin;
 }
+
+.topbuffer{
+    margin-top: 10px;
+}
