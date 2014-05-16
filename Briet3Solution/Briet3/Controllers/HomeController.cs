@@ -130,7 +130,7 @@ namespace Briet3.Controllers
         [HttpGet]
         public FileContentResult GetFile(int id)
         {
-            // Enable user to download file from database
+            // Enable user to download file from database by calling the GetFile function
             FileSRT file = m_repository.GetFile(id);
             byte[] data = System.Text.Encoding.Default.GetBytes(file.Data);
             return File(data, "text/plain", file.FileSRTName);

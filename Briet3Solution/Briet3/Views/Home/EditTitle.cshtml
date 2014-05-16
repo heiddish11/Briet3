@@ -4,7 +4,7 @@
     ViewBag.Title = "EditTitle";
 }
 
-<h2>EditTitle</h2>
+<h2>Edit Subtitles</h2>
 
 
 @using (Html.BeginForm())
@@ -12,18 +12,10 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>FileSRT</h4>
+        <h4>Help make these subtitles better! We Love you for it</h4>
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.FileSRTID)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.TitleID, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TitleID)
-                @Html.ValidationMessageFor(model => model.TitleID)
-            </div>
-        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.FileSRTName, new { @class = "control-label col-md-2" })
@@ -36,7 +28,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Data, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Data)
+                @Html.TextAreaFor(model => model.Data, new { cols = "30", rows = "15" })
                 @Html.ValidationMessageFor(model => model.Data)
             </div>
         </div>
